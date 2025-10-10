@@ -6,6 +6,7 @@
 export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	acid: {
 		inherit: true,
+		basePower: 65,
 		secondary: {
 			chance: 33,
 			boosts: {
@@ -195,6 +196,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		critRatio: 2,
 	},
+	cut: {
+		inherit: true,
+		critRatio: 1,
+	}
+
 	dig: {
 		inherit: true,
 		basePower: 100,
@@ -212,7 +218,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	disable: {
 		num: 50,
-		accuracy: 55,
+		accuracy: 75,
 		basePower: 0,
 		category: "Status",
 		name: "Disable",
@@ -266,7 +272,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	dizzypunch: {
 		inherit: true,
-		secondary: null,
+		secondary: {
+			chance: 10,
+			volatileStatus: 'confusion',
+		},
 	},
 	doubleedge: {
 		inherit: true,
@@ -339,7 +348,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	gust: {
 		inherit: true,
-		type: "Normal",
+		type: "Flying",
 	},
 	haze: {
 		inherit: true,
@@ -518,8 +527,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	nightshade: {
 		inherit: true,
-		ignoreImmunity: true,
-		basePower: 1,
+		damage: false,
+		basePower: 60,
 	},
 	petaldance: {
 		inherit: true,
@@ -545,14 +554,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	psywave: {
 		inherit: true,
 		basePower: 1,
-		damageCallback(pokemon) {
-			const psywaveDamage = (this.random(0, this.trunc(1.5 * pokemon.level)));
-			if (psywaveDamage <= 0) {
-				this.hint("Desync Clause Mod activated!");
-				return false;
-			}
-			return psywaveDamage;
-		},
 	},
 	rage: {
 		inherit: true,
@@ -583,15 +584,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		critRatio: 1,
 		target: "normal",
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile('twoturnmove')) {
-				attacker.removeVolatile('invulnerability');
-				return;
-			}
-			this.add('-prepare', attacker, move.name);
-			attacker.addVolatile('twoturnmove', defender);
-			return null;
+		self: {
+			volatileStatus: 'mustrecharge',
 		},
+		type: "Normal",
 	},
 	recover: {
 		inherit: true,
@@ -671,7 +667,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	rockthrow: {
 		inherit: true,
-		accuracy: 65,
+		accuracy: 95,
 	},
 	sandattack: {
 		inherit: true,
@@ -702,22 +698,22 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	skyattack: {
 		inherit: true,
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile('twoturnmove')) {
-				attacker.removeVolatile('invulnerability');
-				return;
-			}
-			this.add('-prepare', attacker, move.name);
-			attacker.addVolatile('twoturnmove', defender);
-			return null;
-		},
 	},
 	slash: {
 		inherit: true,
 		critRatio: 2,
 	},
+	slam: {
+		inherit: true,
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
+		type: "Normal",
+	},
 	sludge: {
 		inherit: true,
+		basePower: 90,
 		secondary: {
 			chance: 40,
 			status: 'psn',
@@ -734,6 +730,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			attacker.addVolatile('twoturnmove', defender);
 			return null;
 		},
+		basePower: 180,
 	},
 	sonicboom: {
 		inherit: true,
@@ -900,7 +897,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	wingattack: {
 		inherit: true,
-		basePower: 35,
+		basePower: 60,
 	},
 	wrap: {
 		inherit: true,

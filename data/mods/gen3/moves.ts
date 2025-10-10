@@ -26,10 +26,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	astonish: {
 		inherit: true,
-		basePowerCallback(pokemon, target) {
-			if (target.volatiles['minimize']) return 60;
-			return 30;
-		},
 	},
 	beatup: {
 		inherit: true,
@@ -219,11 +215,9 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	dig: {
 		inherit: true,
-		basePower: 60,
 	},
 	disable: {
 		inherit: true,
-		accuracy: 55,
 		flags: { protect: 1, mirror: 1, bypasssub: 1, metronome: 1 },
 		volatileStatus: 'disable',
 		condition: {
@@ -271,7 +265,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	dive: {
 		inherit: true,
-		basePower: 60,
 	},
 	doomdesire: {
 		inherit: true,
@@ -388,11 +381,9 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	flash: {
 		inherit: true,
-		accuracy: 70,
 	},
 	fly: {
 		inherit: true,
-		basePower: 70,
 	},
 	followme: {
 		inherit: true,
@@ -451,7 +442,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	highjumpkick: {
 		inherit: true,
-		basePower: 85,
 		onMoveFail(target, source, move) {
 			if (target.runImmunity('Fighting')) {
 				const damage = this.actions.getDamage(source, target, move, true);
@@ -466,7 +456,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	jumpkick: {
 		inherit: true,
-		basePower: 70,
 		onMoveFail(target, source, move) {
 			if (target.runImmunity('Fighting')) {
 				const damage = this.actions.getDamage(source, target, move, true);
@@ -477,7 +466,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	leafblade: {
 		inherit: true,
-		basePower: 70,
 	},
 	lockon: {
 		inherit: true,
@@ -485,7 +473,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	megadrain: {
 		inherit: true,
-		pp: 10,
 	},
 	memento: {
 		inherit: true,
@@ -553,10 +540,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	needlearm: {
 		inherit: true,
-		basePowerCallback(pokemon, target) {
-			if (target.volatiles['minimize']) return 120;
-			return 60;
-		},
 	},
 	nightmare: {
 		inherit: true,
@@ -568,7 +551,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	outrage: {
 		inherit: true,
-		basePower: 90,
 	},
 	overheat: {
 		inherit: true,
@@ -576,11 +558,9 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	petaldance: {
 		inherit: true,
-		basePower: 70,
 	},
 	recover: {
 		inherit: true,
-		pp: 20,
 	},
 	reversal: {
 		inherit: true,
@@ -606,7 +586,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	rocksmash: {
 		inherit: true,
-		basePower: 20,
 	},
 	sketch: {
 		inherit: true,
@@ -752,7 +731,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	vinewhip: {
 		inherit: true,
-		pp: 10,
 	},
 	volttackle: {
 		inherit: true,
@@ -787,6 +765,5 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	zapcannon: {
 		inherit: true,
-		basePower: 100,
 	},
 };

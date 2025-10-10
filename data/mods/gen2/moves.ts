@@ -611,7 +611,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	razorwind: {
 		inherit: true,
-		accuracy: 75,
 		critRatio: 3,
 		onPrepareHit(target, source) {
 			return source.status !== 'slp';
@@ -733,9 +732,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	skyattack: {
 		inherit: true,
 		critRatio: 1,
-		onPrepareHit(target, source) {
-			return source.status !== 'slp';
-		},
 		secondary: null,
 	},
 	slash: {
