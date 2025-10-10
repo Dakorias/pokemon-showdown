@@ -2444,14 +2444,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 170,
 	},
 	magmaarmor: {
-		onUpdate(pokemon) {
-			if (pokemon.status === 'frz') {
-				this.add('-activate', pokemon, 'ability: Magma Armor');
-				pokemon.cureStatus();
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				this.debug('Magma Armor weaken');
+				return this.chainModify(0.125);
 			}
 		},
-		onImmunity(type, pokemon) {
-			if (type === 'frz') return false;
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				this.debug('Magma Armor weaken');
+				return this.chainModify(0.125);
+			}
 		},
 		flags: { breakable: 1 },
 		name: "Magma Armor",
