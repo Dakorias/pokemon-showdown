@@ -199,23 +199,13 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	cut: {
 		inherit: true,
 		critRatio: 1,
-	}
+	},
 
 	dig: {
 		inherit: true,
-		basePower: 100,
-		condition: {},
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile('twoturnmove')) {
-				attacker.removeVolatile('invulnerability');
-				return;
-			}
-			this.add('-prepare', attacker, move.name);
-			attacker.addVolatile('twoturnmove', defender);
-			attacker.addVolatile('invulnerability', defender);
-			return null;
-		},
+		basePower: 70,
 	},
+	
 	disable: {
 		num: 50,
 		accuracy: 75,
@@ -313,28 +303,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	fly: {
 		inherit: true,
-		condition: {},
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile('twoturnmove')) {
-				attacker.removeVolatile('invulnerability');
-				return;
-			}
-			this.add('-prepare', attacker, move.name);
-			attacker.addVolatile('twoturnmove', defender);
-			attacker.addVolatile('invulnerability', defender);
-			return null;
-		},
 	},
+
 	focusenergy: {
 		inherit: true,
-		condition: {
-			onStart(pokemon) {
-				this.add('-start', pokemon, 'move: Focus Energy');
-			},
-			// This does nothing as it's dealt with on critical hit calculation.
-			onModifyMove() {},
-		},
 	},
+
 	glare: {
 		inherit: true,
 		ignoreImmunity: true,
@@ -529,6 +503,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		damage: false,
 		basePower: 60,
+		overrideOffensiveStat: 'spd',
 	},
 	petaldance: {
 		inherit: true,

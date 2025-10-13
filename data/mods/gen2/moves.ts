@@ -11,7 +11,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		onModifyMove(move, pokemon) {
 			move.type = '???';
-			move.category = 'Special';
+			move.category = 'Physical';
 			move.allies = pokemon.side.pokemon.filter(ally => !ally.fainted && !ally.status);
 			move.multihit = move.allies.length;
 		},
@@ -111,6 +111,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			},
 		},
 	},
+
+	bite: {
+		inherit: true,
+		overrideOffensiveStat: 'def'
+	},
+
 	counter: {
 		inherit: true,
 		damageCallback(pokemon, target) {
@@ -136,6 +142,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		critRatio: 3,
 	},
+
+	crunch: {
+		inherit: true,
+		overrideOffensiveStat: 'def'
+	},
+
 	curse: {
 		inherit: true,
 		condition: {
@@ -297,6 +309,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			},
 		},
 	},
+
+	feintattack: {
+		inherit: true,
+		overrideOffensiveStat: 'def'
+	},
+
 	frustration: {
 		inherit: true,
 		basePowerCallback(pokemon) {
@@ -358,6 +376,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			},
 		},
 	},
+
+	lick: {
+		inherit: true,
+		overrideOffensiveStat: 'spd'
+	},
+
 	lightscreen: {
 		inherit: true,
 		condition: {
@@ -715,6 +739,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		flags: { protect: 1, mirror: 1, metronome: 1, noparentalbond: 1, nosketch: 1 },
 	},
+	
+	shadowball: {
+		inherit: true,
+		overrideOffensiveStat: 'spd'
+	},
+
 	sketch: {
 		inherit: true,
 		flags: { bypasssub: 1, failencore: 1, noassist: 1, nosketch: 1 },
@@ -876,6 +906,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	thief: {
 		inherit: true,
+		overrideOffensiveStat: 'def',
 		onAfterHit() {},
 		secondary: {
 			chance: 100,

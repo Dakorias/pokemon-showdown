@@ -90,7 +90,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 		damageTaken: {
 			psn: 3,
 			tox: 3,
-			Bug: 1,
+			Bug: 0,
 			Dragon: 0,
 			Electric: 0,
 			Fighting: 2,
@@ -115,7 +115,7 @@ export const TypeChart: import('../../../sim/dex-data').ModdedTypeDataTable = {
 			Fighting: 2,
 			Fire: 0,
 			Flying: 0,
-			Ghost: 3,
+			Ghost: 1,
 			Grass: 0,
 			Ground: 0,
 			Ice: 0,
