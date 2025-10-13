@@ -4004,7 +4004,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					id: 'doomdesire',
 					name: "Doom Desire",
 					accuracy: 100,
-					basePower: 140,
+					basePower: 150,
 					category: "Special",
 					priority: 0,
 					flags: { metronome: 1, futuremove: 1 },
@@ -10524,27 +10524,18 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	leafblade: {
 		num: 348,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 90,
 		category: "Physical",
 		name: "Leaf Blade",
 		pp: 15,
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, slicing: 1 },
 		critRatio: 2,
-		secondary: {
-			chance: 30,
-			self: {
-				boosts: {
-					spa: 1,
-				},
-			},
-		},
+		secondary: null,
 		target: "normal",
 		type: "Grass",
 		contestType: "Cool",
 	},
-
-	
 
 	leafstorm: {
 		num: 437,
