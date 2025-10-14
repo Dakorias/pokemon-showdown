@@ -948,7 +948,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	magmaarmor: {
 		name: "Magma Armor",
-		shortDesc: "This Pokemon cannot be frozen. Gaining this Ability while frozen cures it.",
+		shortDesc: "If this Pokemon is hit by a Water Move, it deals 8x less damage than it would have otherwise.",
 	},
 	magnetpull: {
 		name: "Magnet Pull",

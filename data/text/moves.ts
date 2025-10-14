@@ -541,8 +541,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	blazekick: {
 		name: "Blaze Kick",
-		desc: "Has a 10% chance to burn the target and a higher chance for a critical hit.",
-		shortDesc: "High critical hit ratio. 10% chance to burn.",
+		desc: "Has a 20% chance to burn the target and a 20% chance to cause the opponent to flinch.",
+		shortDesc: "20% chance to burn or flinch.",
 	},
 	blazingtorque: {
 		name: "Blazing Torque",
@@ -1251,7 +1251,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	cut: {
 		name: "Cut",
-		shortDesc: "No additional effect.",
+		desc: "Has a higher chance for a critical hit.",
+		shortDesc: "High critical hit ratio.",
 	},
 	darkestlariat: {
 		name: "Darkest Lariat",
@@ -1453,8 +1454,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a 20% chance to confuse the target.",
 		shortDesc: "20% chance to confuse the target.",
 		gen1: {
-			desc: "No additional effect.",
-			shortDesc: "No additional effect.",
+			desc: "Has a 10% chance to confuse the target.",
+			shortDesc: "10% chance to confuse the target.",
 		},
 	},
 	doodle: {
@@ -3219,8 +3220,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	hypervoice: {
 		name: "Hyper Voice",
-		desc: "No additional effect.",
-		shortDesc: "No additional effect. Hits adjacent foes.",
+		desc: "Has a 30% chance to confuse the target.",
+		shortDesc: "30% chance to confuse the target. Hits adjacent foes.",
 	},
 	hypnosis: {
 		name: "Hypnosis",
@@ -4374,8 +4375,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	muddywater: {
 		name: "Muddy Water",
-		desc: "Has a 30% chance to lower the target's accuracy by 1 stage.",
-		shortDesc: "30% chance to lower the foe(s) accuracy by 1.",
+		desc: "Has a 50% chance to lower the target's speed by 1 stage.",
+		shortDesc: "50% chance to lower the foe(s) speed by 1.",
 	},
 	multiattack: {
 		name: "Multi-Attack",
@@ -4462,8 +4463,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Deals damage to the target equal to the user's level.",
 		shortDesc: "Does damage equal to the user's level.",
 		gen1: {
-			desc: "Deals damage to the target equal to the user's level. This move ignores type immunity.",
-			shortDesc: "Damage = user's level. Can hit Normal types.",
+			shortDesc: "No additional effect.",
 		},
 	},
 	nightslash: {
@@ -5171,8 +5171,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 			shortDesc: "Charges, then hits target turn 2. High crit ratio.",
 		},
 		gen1: {
-			desc: "This attack charges on the first turn and executes on the second.",
-			shortDesc: "Charges turn 1. Hits turn 2.",
+			desc: "If this move is successful, the user must recharge on the following turn and cannot select a move, unless the target or its substitute was knocked out by this move.",
+			shortDesc: "Can't move next turn if target or sub is not KOed.",
 		},
 
 		prepare: "  [POKEMON] whipped up a whirlwind!",
@@ -5372,8 +5372,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	rocksmash: {
 		name: "Rock Smash",
-		desc: "Has a 50% chance to lower the target's Defense by 1 stage.",
-		shortDesc: "50% chance to lower the target's Defense by 1.",
+		desc: "Has a 20% chance to lower the target's Defense by 1 stage.",
+		shortDesc: "20% chance to lower the target's Defense by 1.",
 	},
 	rockthrow: {
 		name: "Rock Throw",
@@ -5864,17 +5864,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	skyattack: {
 		name: "Sky Attack",
-		desc: "Has a 30% chance to make the target flinch and a higher chance for a critical hit. This attack charges on the first turn and executes on the second. If the user is holding a Power Herb, the move completes in one turn.",
-		shortDesc: "Charges, then hits turn 2. 30% flinch. High crit.",
-		gen3: {
-			desc: "Has a 30% chance to make the target flinch and a higher chance for a critical hit. This attack charges on the first turn and executes on the second.",
-		},
-		gen2: {
-			desc: "This attack charges on the first turn and executes on the second.",
-			shortDesc: "Charges turn 1. Hits turn 2.",
-		},
-
-		prepare: "[POKEMON] became cloaked in a harsh light!",
+		shortDesc: "No additional effect.",
 	},
 	skydrop: {
 		name: "Sky Drop",
@@ -7281,8 +7271,9 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		shortDesc: "No additional effect.",
 	},
 	visegrip: {
-		name: "Vise Grip",
-		shortDesc: "No additional effect.",
+		name: "Vice Grip",
+		desc: "Has a 20% chance to lower the target's attack by 1 stage.",
+		shortDesc: "20% chance to lower the foe(s) attack by 1.",
 	},
 	vitalthrow: {
 		name: "Vital Throw",
@@ -7322,8 +7313,8 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	waterfall: {
 		name: "Waterfall",
-		desc: "Has a 20% chance to make the target flinch.",
-		shortDesc: "20% chance to make the target flinch.",
+		desc: "Has a 30% chance to make the target flinch.",
+		shortDesc: "30% chance to make the target flinch.",
 		gen3: {
 			desc: "No additional effect.",
 			shortDesc: "No additional effect.",
