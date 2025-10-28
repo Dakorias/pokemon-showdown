@@ -12576,7 +12576,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			{generation: 2, level: 30},
 		],
 	},
-};
 	treecko: {
 		learnset: {
 			absorb: ["9E", "8E", "7L5", "6L5", "5L6", "5S1", "4L6", "3L6", "3S0"],
