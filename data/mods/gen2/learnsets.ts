@@ -820,6 +820,7 @@ export const Learnsets: import('../../../sim/dex-species').ModdedLearnsetDataTab
 			doubleedge: ["1M"],
 			doubleteam: ["2M", "1M"],
 			endure: ["2M"],
+			extremespeed: ["2L36"],
 			fly: ["2M", "1M"],
 			frustration: ["2M"],
 			gust: ["2L1", "1L1"],
