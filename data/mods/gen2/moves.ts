@@ -597,6 +597,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	pursuit: {
 		inherit: true,
+		overrideOffensiveStat: 'def',
 		onModifyMove() {},
 		condition: {
 			duration: 1,
