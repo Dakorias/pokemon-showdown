@@ -18,13 +18,13 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onAfterMoveSelfPriority: 2,
 		onAfterMoveSelf(pokemon) {
 			const toxicCounter = pokemon.volatiles['residualdmg'] ? pokemon.volatiles['residualdmg'].counter : 1;
-			this.damage(this.clampIntRange(Math.floor(pokemon.maxhp / 16), 1) * toxicCounter, pokemon);
+			this.damage(this.clampIntRange(Math.floor(pokemon.maxhp / 8), 1) * toxicCounter, pokemon);
 			if (pokemon.volatiles['residualdmg']) {
 				this.hint("In Gen 1, Toxic's counter is retained after Rest and applies to PSN/BRN.", true);
 			}
 		},
 		onAfterSwitchInSelf(pokemon) {
-			this.damage(this.clampIntRange(Math.floor(pokemon.maxhp / 16), 1));
+			this.damage(this.clampIntRange(Math.floor(pokemon.maxhp / 8), 1));
 		},
 	},
 	par: {
@@ -108,13 +108,13 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onAfterMoveSelfPriority: 2,
 		onAfterMoveSelf(pokemon) {
 			const toxicCounter = pokemon.volatiles['residualdmg'] ? pokemon.volatiles['residualdmg'].counter : 1;
-			this.damage(this.clampIntRange(Math.floor(pokemon.maxhp / 16), 1) * toxicCounter, pokemon);
+			this.damage(this.clampIntRange(Math.floor(pokemon.maxhp / 8), 1) * toxicCounter, pokemon);
 			if (pokemon.volatiles['residualdmg']) {
 				this.hint("In Gen 1, Toxic's counter is retained after Rest and applies to PSN/BRN.", true);
 			}
 		},
 		onAfterSwitchInSelf(pokemon) {
-			this.damage(this.clampIntRange(Math.floor(pokemon.maxhp / 16), 1));
+			this.damage(this.clampIntRange(Math.floor(pokemon.maxhp / 8), 1));
 		},
 	},
 	tox: {

@@ -385,7 +385,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	karatechop: {
 		inherit: true,
 		critRatio: 2,
-		type: "Normal",
+		type: "Fighting",
 	},
 	leechseed: {
 		inherit: true,
@@ -661,15 +661,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	skullbash: {
 		inherit: true,
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile('twoturnmove')) {
-				attacker.removeVolatile('invulnerability');
-				return;
-			}
-			this.add('-prepare', attacker, move.name);
-			attacker.addVolatile('twoturnmove', defender);
-			return null;
+		target: "normal",
+		self: {
+			volatileStatus: 'mustrecharge',
 		},
+		type: "Normal",
 	},
 	skyattack: {
 		inherit: true,
@@ -684,7 +680,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			chance: 10,
 			volatileStatus: 'flinch',
 		},
-		type: "Normal",
+		type: "Dragon",
 	},
 	sludge: {
 		inherit: true,
@@ -857,6 +853,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			chance: 10,
 			status: 'par',
 		},
+	},
+	transform: {
+		inherit: true,
+		priority: 2,
 	},
 	triattack: {
 		inherit: true,
