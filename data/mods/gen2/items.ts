@@ -8,7 +8,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtk() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Fighting') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -17,7 +17,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpA() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Dark') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -34,7 +34,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpA() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Fire') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -46,7 +46,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Dragon') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -68,7 +68,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtk() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Rock') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -130,7 +130,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpA() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Electric') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -139,7 +139,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtk() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Steel') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -154,7 +154,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpA() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Grass') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -167,7 +167,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpA() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Water') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -176,7 +176,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpA() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Ice') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -185,7 +185,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtk() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Poison') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -194,7 +194,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtk() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Flying') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -203,7 +203,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtk() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Bug') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -212,7 +212,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtk() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Ground') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -221,7 +221,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtk() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Ghost') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -248,7 +248,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpA() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Psychic') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 	},
@@ -293,7 +293,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onBasePower() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Normal') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 		isNonstandard: null,
@@ -303,7 +303,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onBasePower() {},
 		onModifyDamage(damage, source, target, move) {
 			if (move?.type === 'Normal') {
-				return damage * 1.1;
+				return damage * 1.2;
 			}
 		},
 		isNonstandard: null,
