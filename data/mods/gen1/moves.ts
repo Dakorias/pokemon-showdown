@@ -277,7 +277,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	explosion: {
 		inherit: true,
-		basePower: 170,
+		basePower: 250,
 		target: "normal",
 	},
 	fireblast: {
@@ -656,7 +656,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	selfdestruct: {
 		inherit: true,
-		basePower: 130,
+		basePower: 200,
 		target: "normal",
 	},
 	skullbash: {
