@@ -76,6 +76,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	bind: {
 		inherit: true,
+		accuracy: 85,
 		ignoreImmunity: true,
 		self: {
 			volatileStatus: 'partialtrappinglock',
@@ -98,11 +99,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	blizzard: {
 		inherit: true,
-		accuracy: 90,
+		accuracy: 85,
 		target: "normal",
 	},
 	bubble: {
 		inherit: true,
+		basePower: 10,
 		secondary: {
 			chance: 33,
 			boosts: {
@@ -122,7 +124,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	clamp: {
 		inherit: true,
-		accuracy: 75,
+		accuracy: 85,
 		pp: 10,
 		self: {
 			volatileStatus: 'partialtrappinglock',
@@ -269,7 +271,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	doubleedge: {
 		inherit: true,
-		basePower: 100,
+		basePower: 120,
 	},
 	dragonrage: {
 		inherit: true,
@@ -287,9 +289,13 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			status: 'brn',
 		},
 	},
+	firepunch: {
+		inherit: true,
+		basePower: 70,
+	},
 	firespin: {
 		inherit: true,
-		accuracy: 70,
+		accuracy: 85,
 		basePower: 15,
 		self: {
 			volatileStatus: 'partialtrappinglock',
@@ -376,6 +382,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.directDamage(1, source, target);
 		},
 	},
+	icepunch: {
+		inherit: true,
+		basePower: 70,
+	},
 	jumpkick: {
 		inherit: true,
 		onMoveFail(target, source, move) {
@@ -386,6 +396,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		critRatio: 2,
 		type: "Fighting",
+	},
+	leechlife: {
+		inherit: true,
+		basePower: 50,
 	},
 	leechseed: {
 		inherit: true,
@@ -418,6 +432,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			},
 		},
 	},
+	lick: {
+		inherit: true,
+		basePower: 40,
+	},
 	lightscreen: {
 		num: 113,
 		accuracy: true,
@@ -440,6 +458,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		},
 		target: "self",
 		type: "Psychic",
+	},
+	megadrain: {
+		inherit: true,
+		basePower: 65,
 	},
 	mimic: {
 		inherit: true,
@@ -511,6 +533,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	poisonsting: {
 		inherit: true,
+		basePower: 35,
 		secondary: {
 			chance: 20,
 			status: 'psn',
@@ -529,9 +552,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	psywave: {
 		inherit: true,
 		basePower: 1,
+		accuracy: 95,
 	},
 	rage: {
 		inherit: true,
+		basePower: 60,
 		self: {
 			volatileStatus: 'rage',
 		},
@@ -609,6 +634,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	rest: {
 		inherit: true,
+		pp: 10,
 		onTry() {},
 		onHit(target, source, move) {
 			if (target.hp === target.maxhp) return false;
@@ -637,12 +663,20 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	rockslide: {
 		inherit: true,
-		secondary: null,
+		basePower: 75,
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
 		target: "normal",
 	},
 	rockthrow: {
 		inherit: true,
 		accuracy: 95,
+	},
+	rollingkick: {
+		inherit: true,
+		basePower: 70,
 	},
 	sandattack: {
 		inherit: true,
@@ -661,6 +695,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	skullbash: {
 		inherit: true,
+		basePower: 100,
 		target: "normal",
 		self: {
 			volatileStatus: 'mustrecharge',
@@ -690,6 +725,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			status: 'psn',
 		},
 	},
+	smog: {
+		inherit: true,
+		basePower: 40,
+		accuracy: 80,
+	},
 	solarbeam: {
 		inherit: true,
 		onTryMove(attacker, defender, move) {
@@ -710,6 +750,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	softboiled: {
 		inherit: true,
+		pp: 10,
 		heal: null,
 		onHit(target) {
 			if (target.hp === target.maxhp) return false;
@@ -726,6 +767,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			}
 			this.heal(Math.floor(target.maxhp / 2), target, target);
 		},
+	},
+	spikecannon: {
+		inherit: true,
+		type: "Normal",
 	},
 	struggle: {
 		inherit: true,
@@ -843,16 +888,29 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		ignoreImmunity: true,
 		basePower: 1,
 	},
+	supersonic: {
+		inherit: true,
+		accuracy: 70,
+	},
 	thrash: {
 		inherit: true,
 		onMoveFail() {},
 	},
 	thunder: {
 		inherit: true,
+		accuracy: 85,
 		secondary: {
 			chance: 10,
 			status: 'par',
 		},
+	},
+	thunderpunch: {
+		inherit: true,
+		basePower: 70,
+	},
+	toxic: {
+		inherit: true,
+		accuracy: 85,
 	},
 	transform: {
 		inherit: true,
@@ -860,8 +918,16 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	triattack: {
 		inherit: true,
+		pp: 15,
 		onHit() {},
 		secondary: null,
+	},
+	waterfall: {
+		inherit: true,
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
 	},
 	whirlwind: {
 		inherit: true,
