@@ -5678,6 +5678,7 @@ export const Learnsets: import('../../../sim/dex-species').ModdedLearnsetDataTab
 			sleeptalk: ["2M"],
 			sludgebomb: ["2M"],
 			snore: ["2M"],
+			softboiled: ["1M"],
 			solarbeam: ["2M", "2L42"],
 			strength: ["2M"],
 			stunspore: ["2L25", "1L32"],
