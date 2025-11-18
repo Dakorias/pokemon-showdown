@@ -101,7 +101,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	pikachu: {
 		inherit: true,
-		baseStats: { hp: 60, atk: 55, def: 50, spa: 70, spd: 70, spe: 90 },
+		baseStats: { hp: 60, atk: 68, def: 62, spa: 87, spd: 87, spe: 112 },
 	},
 	raichu: {
 		inherit: true,
