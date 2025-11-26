@@ -201,6 +201,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	cut: {
 		inherit: true,
 		critRatio: 1,
+		accuracy: 100,
 	},
 
 	dig: {
@@ -487,6 +488,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		target: "self",
 		type: "Psychic",
 	},
+	lowkick: {
+		inherit: true,
+		accuracy: 100,
+	},
 	megadrain: {
 		inherit: true,
 		basePower: 65,
@@ -581,6 +586,14 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		basePower: 1,
 		accuracy: 95,
+		damageCallback(pokemon) {
+			const psywaveDamage = (this.random(this.trunc(pokemon.level), this.trunc(1.5 * pokemon.level)));
+			if (psywaveDamage <= 0) {
+				this.hint("Desync Clause Mod activated!");
+				return false;
+			}
+			return psywaveDamage;
+		},
 	},
 	rage: {
 		inherit: true,
@@ -619,20 +632,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	recover: {
 		inherit: true,
+		pp: 10,
 		heal: null,
 		onHit(target) {
 			if (target.hp === target.maxhp) return false;
-			// Fail when health is 255 or 511 less than max, unless it is divisible by 256
-			if (
-				target.hp === target.maxhp ||
-				((target.hp === (target.maxhp - 255) || target.hp === (target.maxhp - 511)) && target.hp % 256 !== 0)
-			) {
-				this.hint(
-					"In Gen 1, recovery moves fail if (user's maximum HP - user's current HP + 1) is divisible by 256, " +
-					"unless the current hp is also divisible by 256."
-				);
-				return false;
-			}
 			this.heal(Math.floor(target.maxhp / 2), target, target);
 		},
 	},
@@ -666,17 +669,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		onTry() {},
 		onHit(target, source, move) {
 			if (target.hp === target.maxhp) return false;
-			// Fail when health is 255 or 511 less than max, unless it is divisible by 256
-			if (
-				target.hp === target.maxhp ||
-				((target.hp === (target.maxhp - 255) || target.hp === (target.maxhp - 511)) && target.hp % 256 !== 0)
-			) {
-				this.hint(
-					"In Gen 1, recovery moves fail if (user's maximum HP - user's current HP + 1) is divisible by 256, " +
-					"unless the current hp is also divisible by 256."
-				);
-				return false;
-			}
 			if (!target.setStatus('slp', source, move)) return false;
 			target.statusState.time = 2;
 			target.statusState.startTime = 2;
@@ -782,17 +774,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		heal: null,
 		onHit(target) {
 			if (target.hp === target.maxhp) return false;
-			// Fail when health is 255 or 511 less than max, unless it is divisible by 256
-			if (
-				target.hp === target.maxhp ||
-				((target.hp === (target.maxhp - 255) || target.hp === (target.maxhp - 511)) && target.hp % 256 !== 0)
-			) {
-				this.hint(
-					"In Gen 1, recovery moves fail if (user's maximum HP - user's current HP + 1) is divisible by 256, " +
-					"unless the current hp is also divisible by 256."
-				);
-				return false;
-			}
 			this.heal(Math.floor(target.maxhp / 2), target, target);
 		},
 	},
@@ -805,6 +786,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		pp: 10,
 		recoil: [1, 2],
 		onModifyMove() {},
+	},
+	submission: {
+		inherit: true,
+		basePower: 80,
 	},
 	substitute: {
 		num: 164,
@@ -821,9 +806,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				this.add('-fail', target, 'move: Substitute');
 				return null;
 			}
-			// We only prevent when hp is less than one quarter.
-			// If you use substitute at exactly one quarter, you faint.
-			if (target.hp < target.maxhp / 4) {
+			if (target.hp < (target.maxhp / 4) + 1) {
 				this.add('-fail', target, 'move: Substitute', '[weak]');
 				return null;
 			}
@@ -922,11 +905,13 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	thrash: {
 		inherit: true,
+		basePower: 90,
 		onMoveFail() {},
 	},
 	thunder: {
 		inherit: true,
 		accuracy: 85,
+		pp: 5,
 		secondary: {
 			chance: 10,
 			status: 'par',
@@ -948,7 +933,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		pp: 15,
 		onHit() {},
-		secondary: null,
+		secondary: {
+			chance: 30,
+			status: 'burn',
+		},
 	},
 	waterfall: {
 		inherit: true,

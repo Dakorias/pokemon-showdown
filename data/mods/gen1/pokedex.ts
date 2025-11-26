@@ -431,7 +431,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	},
 	hitmonchan: {
 		inherit: true,
-		baseStats: { hp: 50, atk: 105, def: 79, spa: 35, spd: 35, spe: 76 },
+		baseStats: { hp: 60, atk: 50, def: 79, spa: 105, spd: 105, spe: 76 },
 	},
 	lickitung: {
 		inherit: true,
