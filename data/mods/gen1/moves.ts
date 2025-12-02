@@ -587,7 +587,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		basePower: 1,
 		accuracy: 95,
 		damageCallback(pokemon) {
-			const psywaveDamage = (this.random(this.trunc(pokemon.level), this.trunc(1.5 * pokemon.level)));
+			const psywaveDamage = (this.random(this.trunc(pokemon.level/10 * 7.5), this.trunc(1.5 * pokemon.level)));
 			if (psywaveDamage <= 0) {
 				this.hint("Desync Clause Mod activated!");
 				return false;
