@@ -307,6 +307,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	firepunch: {
 		inherit: true,
 		basePower: 70,
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
 	},
 	firespin: {
 		inherit: true,
