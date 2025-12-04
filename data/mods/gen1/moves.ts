@@ -736,6 +736,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			volatileStatus: 'flinch',
 		},
 		type: "Dragon",
+		overrideOffensiveStat: 'spd',
 	},
 	sludge: {
 		inherit: true,
