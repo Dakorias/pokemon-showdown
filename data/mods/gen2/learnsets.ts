@@ -8305,7 +8305,7 @@ export const Learnsets: import('../../../sim/dex-species').ModdedLearnsetDataTab
 			bodyslam: ["1M"],
 			bubblebeam: ["1M"],
 			curse: ["2M"],
-			cut: ["2M, 1M"],
+			cut: ["2M", "1M"],
 			dig: ["2E", "2M"],
 			doubleedge: ["1M"],
 			doubleteam: ["2M", "1M"],
