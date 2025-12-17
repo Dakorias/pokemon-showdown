@@ -8827,7 +8827,7 @@ export const Learnsets: import('../../../sim/dex-species').ModdedLearnsetDataTab
 			waterfall: ["2M"],
 			watergun: ["1M"],
 			whirlpool: ["2M"],
-			wingattack: ["2L55, 1L55, 1L60"],
+			wingattack: ["2L55", "1L55", "1L60"],
 			wrap: ["2L1", "1L1"],
 			zapcannon: ["2M"],
 		},
